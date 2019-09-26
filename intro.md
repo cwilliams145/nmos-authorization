@@ -4,7 +4,7 @@ AMWA IS-10 specifies an API for the authorization of other NMOS APIs.
 
 It has been developed by the [Advanced Media Workflow Association](https://www.amwa.tv) as part of the [Networked Media Open Specifications](https://www.nmos.tv) initative.
 
-See [here](https://amwa-tv.github.io/nmos) for an overview of NMOS specifcations.
+See [here](https://amwa-tv.github.io/nmos) for an overview of NMOS specifications.
 
 You are looking at an HTML rendering of the Specification.
 The source for the specification is in [this GitHub repository](https://github.com/AMWA-TV/nmos-authorization).
