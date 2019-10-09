@@ -3,3 +3,4 @@
 # Documentation for v1.0-dev
 
 - [Overview](1.0._Overview.md)
+- [Discovery](3.0._Discovery.md)

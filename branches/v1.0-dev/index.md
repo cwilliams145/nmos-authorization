@@ -4,6 +4,7 @@
 ## Documentation for v1.0-dev
 
 - [Overview](docs/1.0._Overview.md)
+- [Discovery](docs/3.0._Discovery.md)
 
 ## APIs for v1.0-dev
 
