@@ -1,3 +1,18 @@
+---
+layout: default
+title: Schema token_error_response.json
+---
+
+<html>
+<meta charset="UTF-8">
+<h2>Schema token_error_response.json</h2>
+<p>
+    <a href="../../schemas/resolved/token_error_response.html">Resolve referenced schemas</a>
+</p>
+<div id="json-render">
+<script type="text/javascript" src="json-formatter.js"></script>
+<script>
+const formatter = new JSONFormatter.default(
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Token Error Response",
@@ -20,3 +35,14 @@
   },
   "required": ["error"] 
 }
+,
+    3, // Collapse depth
+    {
+        pathsToCollapse: [
+            "properties.id"
+        ]
+    });
+document.getElementsByClassName("content")[0].appendChild(formatter.render());
+</script>
+</div>
+</html>

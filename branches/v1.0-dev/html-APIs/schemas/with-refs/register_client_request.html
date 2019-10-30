@@ -1,3 +1,18 @@
+---
+layout: default
+title: Schema register_client_request.json
+---
+
+<html>
+<meta charset="UTF-8">
+<h2>Schema register_client_request.json</h2>
+<p>
+    <a href="../../schemas/resolved/register_client_request.html">Resolve referenced schemas</a>
+</p>
+<div id="json-render">
+<script type="text/javascript" src="json-formatter.js"></script>
+<script>
+const formatter = new JSONFormatter.default(
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Register Client Request",
@@ -84,3 +99,14 @@
   },
   "required": ["redirect_uris", "client_name" ]
 }
+,
+    3, // Collapse depth
+    {
+        pathsToCollapse: [
+            "properties.id"
+        ]
+    });
+document.getElementsByClassName("content")[0].appendChild(formatter.render());
+</script>
+</div>
+</html>

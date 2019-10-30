@@ -1,0 +1,35 @@
+---
+layout: default
+title: Example register-client-post-request.json
+---
+
+<html>
+<meta charset="UTF-8">
+<h2>Example register-client-post-request.json</h2>
+<div id="json-render">
+<script type="text/javascript" src="json-formatter.js"></script>
+<script>
+const formatter = new JSONFormatter.default(
+{
+  "redirect_uris": [
+    "https://client.example.org/callback",
+    "https://client.example.org/callback2"
+  ],
+  "client_name": "My Example Client",
+  "grant_types": ["authorization_code", "password"],
+  "token_endpoint_auth_method": "client_secret_basic",
+  "logo_uri": "https://client.example.org/logo.png",
+  "jwks_uri": "https://client.example.org/my_public_keys.jwks",
+  "example_extension_parameter": "example_value"
+ }
+,
+    3, // Collapse depth
+    {
+        pathsToCollapse: [
+            "properties.id"
+        ]
+    });
+document.getElementsByClassName("content")[0].appendChild(formatter.render());
+</script>
+</div>
+</html>

@@ -1,0 +1,29 @@
+---
+layout: default
+title: Example register-client-post-201.json
+---
+
+<html>
+<meta charset="UTF-8">
+<h2>Example register-client-post-201.json</h2>
+<div id="json-render">
+<script type="text/javascript" src="json-formatter.js"></script>
+<script>
+const formatter = new JSONFormatter.default(
+{
+  "client_id": "s6BhdRkqt3",
+  "client_secret": "cf136dc3c1fc93f31185e5885805d",
+  "client_id_issued_at": 2893256800,
+  "client_secret_expires_at": 2893276800
+}
+,
+    3, // Collapse depth
+    {
+        pathsToCollapse: [
+            "properties.id"
+        ]
+    });
+document.getElementsByClassName("content")[0].appendChild(formatter.render());
+</script>
+</div>
+</html>

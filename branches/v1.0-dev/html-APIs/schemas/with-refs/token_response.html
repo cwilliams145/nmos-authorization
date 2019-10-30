@@ -1,3 +1,18 @@
+---
+layout: default
+title: Schema token_response.json
+---
+
+<html>
+<meta charset="UTF-8">
+<h2>Schema token_response.json</h2>
+<p>
+    <a href="../../schemas/resolved/token_response.html">Resolve referenced schemas</a>
+</p>
+<div id="json-render">
+<script type="text/javascript" src="json-formatter.js"></script>
+<script>
+const formatter = new JSONFormatter.default(
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Token Response",
@@ -30,3 +45,14 @@
   },
   "required": ["access_token", "expires_in", "token_type"]
 }
+,
+    3, // Collapse depth
+    {
+        pathsToCollapse: [
+            "properties.id"
+        ]
+    });
+document.getElementsByClassName("content")[0].appendChild(formatter.render());
+</script>
+</div>
+</html>

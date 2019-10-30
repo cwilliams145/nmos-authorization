@@ -1,0 +1,26 @@
+---
+layout: default
+title: Example token-post-400.json
+---
+
+<html>
+<meta charset="UTF-8">
+<h2>Example token-post-400.json</h2>
+<div id="json-render">
+<script type="text/javascript" src="json-formatter.js"></script>
+<script>
+const formatter = new JSONFormatter.default(
+{
+  "error":"invalid_request"
+}
+,
+    3, // Collapse depth
+    {
+        pathsToCollapse: [
+            "properties.id"
+        ]
+    });
+document.getElementsByClassName("content")[0].appendChild(formatter.render());
+</script>
+</div>
+</html>

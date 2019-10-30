@@ -1,0 +1,45 @@
+---
+layout: default
+title: Schema authorization-base.json
+---
+
+<html>
+<meta charset="UTF-8">
+<h2>Schema authorization-base.json</h2>
+<p>
+    <a href="../../schemas/resolved/authorization-base.html">Resolve referenced schemas</a>
+</p>
+<div id="json-render">
+<script type="text/javascript" src="json-formatter.js"></script>
+<script>
+const formatter = new JSONFormatter.default(
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "title": "Authorization API base resource",
+  "description": "Displays the Authorization API base resources",
+  "items": {
+    "type": "string",
+    "enum": [
+      "certs/",
+      "register_client/",
+      "token/",
+      "authorize/",
+      "revoke/"
+    ],
+    "minItems": 5,
+    "maxItems": 5,
+    "uniqueItems": true
+  }
+}
+,
+    3, // Collapse depth
+    {
+        pathsToCollapse: [
+            "properties.id"
+        ]
+    });
+document.getElementsByClassName("content")[0].appendChild(formatter.render());
+</script>
+</div>
+</html>
