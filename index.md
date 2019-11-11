@@ -4,21 +4,42 @@
 
 [![Build Status](https://travis-ci.com/AMWA-TV/nmos-authorization.svg)](https://travis-ci.com/AMWA-TV/nmos-authorization)
 
-# [Work In Progress] AMWA IS-10 NMOS Authorization Specification
 
-AMWA IS-10 specifies an API for the authorization of other NMOS APIs.
 
-It has been developed by the [Advanced Media Workflow Association](https://www.amwa.tv) as part of the [Networked Media Open Specifications](https://www.nmos.tv) initative.
+---
+
+## About IS-10
+
+
+### What does it do?
+
+- Allows an API server to accept or reject requests depending on what a client is authorised to do
+
+### Why does it matter?
+
+- Security in the control plane is essential
+  - Best practice is to limit what clients can do
+
+### How does it work?
+
+- Control client provides credentials and gets an access token
+  - Sends token with API requests
+- Based on JSON Web Tokens and OAuth 2.0
+- Encryption is a prerequisite (see BCP-003-01)
+
+
+---
+
+
+IS-10 has been developed by the [Advanced Media Workflow Association](https://www.amwa.tv) as part of the [Networked Media Open Specifications](https://www.nmos.tv) initiative.
 
 See [here](https://amwa-tv.github.io/nmos) for an overview of NMOS specifications.
 
-You are looking at an HTML rendering of the Specification.
-The source for the specification is in [this GitHub repository](https://github.com/AMWA-TV/nmos-authorization).
+The formal (template) specification is provided in [this GitHub repository](https://github.com/AMWA-TV/nmos-authorization). These pages provide supporting documentation and HTML renders of the APIs (which are specified in RAML and JSON Schema).
 
 The documentation and API links immediately below, and the links in the page heading, are for an example development branch. Links to [other releases (tags)](tags/) and [other branches](branches/) appear later in the page, or under "VERSIONS..." in the page heading.
 
 Once AMWA has approved a Specification, its documentation and API links will be for the _most recent approved release_ (which may be earlier than what is shown by the default branch on the GitHub repo).
-
 
 ## Documentation for branch v1.0-dev
 

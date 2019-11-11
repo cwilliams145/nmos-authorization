@@ -1,14 +1,15 @@
-# [Work In Progress] AMWA IS-10 NMOS Authorization Specification
+### What does it do?
 
-AMWA IS-10 specifies an API for the authorization of other NMOS APIs.
+- Allows an API server to accept or reject requests depending on what a client is authorised to do
 
-It has been developed by the [Advanced Media Workflow Association](https://www.amwa.tv) as part of the [Networked Media Open Specifications](https://www.nmos.tv) initative.
+### Why does it matter?
 
-See [here](https://amwa-tv.github.io/nmos) for an overview of NMOS specifications.
+- Security in the control plane is essential
+  - Best practice is to limit what clients can do
 
-You are looking at an HTML rendering of the Specification.
-The source for the specification is in [this GitHub repository](https://github.com/AMWA-TV/nmos-authorization).
+### How does it work?
 
-The documentation and API links immediately below, and the links in the page heading, are for an example development branch. Links to [other releases (tags)](tags/) and [other branches](branches/) appear later in the page, or under "VERSIONS..." in the page heading.
-
-Once AMWA has approved a Specification, its documentation and API links will be for the _most recent approved release_ (which may be earlier than what is shown by the default branch on the GitHub repo).
+- Control client provides credentials and gets an access token
+  - Sends token with API requests
+- Based on JSON Web Tokens and OAuth 2.0
+- Encryption is a prerequisite (see BCP-003-01)
