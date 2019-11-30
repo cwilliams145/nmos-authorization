@@ -10,9 +10,9 @@
 
 ## APIs for branch v1.0-dev
 
-- [AuthorizationAPI](html-APIs/AuthorizationAPI.html)
+- [AuthorizationAPI](APIs/AuthorizationAPI.html)
 
-### [JSON Schemas](html-APIs/schemas/)
+### [JSON Schemas](APIs/schemas/)
 
 
 ### [Examples](examples/)

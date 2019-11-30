@@ -48,9 +48,9 @@ Once AMWA has approved a Specification, its documentation and API links will be 
 
 ## APIs for branch v1.0-dev
 
-- [AuthorizationAPI](branches/v1.0-dev/html-APIs/AuthorizationAPI.html)
+- [AuthorizationAPI](branches/v1.0-dev/APIs/AuthorizationAPI.html)
 
-### [JSON Schemas](branches/v1.0-dev/html-APIs/schemas/)
+### [JSON Schemas](branches/v1.0-dev/APIs/schemas/)
 
 
 ### [Examples](branches/v1.0-dev/examples/)
