@@ -2,7 +2,7 @@
 
 # {{ site.github.project_tagline }}
 
-[![Build Status](https://travis-ci.com/AMWA-TV/nmos-authorization.svg)](https://travis-ci.com/AMWA-TV/nmos-authorization)
+[![Build Status](https://travis-ci.com/AMWA-TV/nmos-authorization.svg?branch=v1.0-dev)](https://travis-ci.com/AMWA-TV/nmos-authorization)
 
 
 
