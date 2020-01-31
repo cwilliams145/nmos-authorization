@@ -33,9 +33,6 @@ const formatter = new JSONFormatter.default(
             "type": "array"
         },
         "grant_types": {
-            "default": [
-                "authorization_code"
-            ],
             "description": "Array of OAuth 2.0 grant type strings that the client can use at the token endpoint",
             "items": {
                 "enum": [
@@ -74,9 +71,6 @@ const formatter = new JSONFormatter.default(
             "type": "array"
         },
         "response_types": {
-            "default": [
-                "code"
-            ],
             "description": "Array of the OAuth 2.0 response type strings that the client can use at the authorization endpoint",
             "items": {
                 "enum": [

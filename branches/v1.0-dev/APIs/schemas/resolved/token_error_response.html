@@ -15,11 +15,20 @@ title: Schema token_error_response.json
 const formatter = new JSONFormatter.default(
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "description": "Object defining error type and description",
+    "description": "Describes the token endpoint's OAuth error response",
     "minItems": 1,
     "properties": {
         "error": {
             "description": "Error Type",
+            "enum": [
+                "invalid_request",
+                "invalid_client",
+                "invalid_grant",
+                "unauthorized_client",
+                "unsupported_grant_type",
+                "invalid_scope",
+                "unsupported_token_type"
+            ],
             "type": "string"
         },
         "error_description": {
@@ -28,6 +37,7 @@ const formatter = new JSONFormatter.default(
         },
         "error_uri": {
             "description": "A URI identifying a human-readable web page with information about the error",
+            "format": "uri",
             "type": "string"
         }
     },

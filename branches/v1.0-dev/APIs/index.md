@@ -5,3 +5,4 @@
 ## APIs for branch v1.0-dev
 
 - [AuthorizationAPI](AuthorizationAPI.html)
+- [ServerMetadataAPI](ServerMetadataAPI.html)

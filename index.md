@@ -44,11 +44,20 @@ Once AMWA has approved a Specification, its documentation and API links will be 
 ## Documentation for branch v1.0-dev
 
 - [Overview](branches/v1.0-dev/docs/1.0._Overview.md)
+- [APIs](branches/v1.0-dev/docs/2.0._APIs.md)
 - [Discovery](branches/v1.0-dev/docs/3.0._Discovery.md)
+- [Behaviour - Authorization Server](branches/v1.0-dev/docs/4.0._Behaviour_-_Authorization_Server.md)
+  - [Clients](branches/v1.0-dev/docs/4.1._Behaviour_-_Clients.md)
+  - [Token Requests](branches/v1.0-dev/docs/4.2._Behaviour_-_Token_Requests.md)
+  - [Tokens](branches/v1.0-dev/docs/4.3._Behaviour_-_Tokens.md)
+  - [Resource Servers](branches/v1.0-dev/docs/4.4._Behaviour_-_Resource_Servers.md)
+- [Definitions](branches/v1.0-dev/docs/5.0._Definitions.md)
+- [Upgrade Path](branches/v1.0-dev/docs/6.0._Upgrade_Path.md)
 
 ## APIs for branch v1.0-dev
 
 - [AuthorizationAPI](branches/v1.0-dev/APIs/AuthorizationAPI.html)
+- [ServerMetadataAPI](branches/v1.0-dev/APIs/ServerMetadataAPI.html)
 
 ### [JSON Schemas](branches/v1.0-dev/APIs/schemas/)
 
