@@ -10,7 +10,7 @@
 - [Behaviour - Authorization Server](4.0._Behaviour_-_Authorization_Server.md)
   - [Clients](4.1._Behaviour_-_Clients.md)
   - [Token Requests](4.2._Behaviour_-_Token_Requests.md)
-  - [Tokens](4.3._Behaviour_-_Tokens.md)
+  - [Access Tokens](4.3._Behaviour_-_Access_Tokens.md)
   - [Resource Servers](4.4._Behaviour_-_Resource_Servers.md)
 - [Definitions](5.0._Definitions.md)
 - [Upgrade Path](6.0._Upgrade_Path.md)

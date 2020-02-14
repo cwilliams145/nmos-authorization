@@ -11,3 +11,4 @@
 - [register_client_response](with-refs/register_client_response.html) [(flattened)](resolved/register_client_response.html)
 - [token_error_response](with-refs/token_error_response.html) [(flattened)](resolved/token_error_response.html)
 - [token_response](with-refs/token_response.html) [(flattened)](resolved/token_response.html)
+- [token_schema](with-refs/token_schema.html) [(flattened)](resolved/token_schema.html)

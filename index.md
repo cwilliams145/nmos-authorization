@@ -49,7 +49,7 @@ Once AMWA has approved a Specification, its documentation and API links will be 
 - [Behaviour - Authorization Server](branches/v1.0-dev/docs/4.0._Behaviour_-_Authorization_Server.md)
   - [Clients](branches/v1.0-dev/docs/4.1._Behaviour_-_Clients.md)
   - [Token Requests](branches/v1.0-dev/docs/4.2._Behaviour_-_Token_Requests.md)
-  - [Tokens](branches/v1.0-dev/docs/4.3._Behaviour_-_Tokens.md)
+  - [Access Tokens](branches/v1.0-dev/docs/4.3._Behaviour_-_Access_Tokens.md)
   - [Resource Servers](branches/v1.0-dev/docs/4.4._Behaviour_-_Resource_Servers.md)
 - [Definitions](branches/v1.0-dev/docs/5.0._Definitions.md)
 - [Upgrade Path](branches/v1.0-dev/docs/6.0._Upgrade_Path.md)
