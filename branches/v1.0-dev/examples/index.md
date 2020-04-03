@@ -9,6 +9,7 @@
 - [base-get-200](base-get-200.html)
 - [jwks-get-200](jwks-get-200.html)
 - [register-client-post-201](register-client-post-201.html)
+- [register-client-post-400](register-client-post-400.html)
 - [register-client-post-request](register-client-post-request.html)
 - [token-post-200](token-post-200.html)
 - [token-post-400](token-post-400.html)

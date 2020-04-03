@@ -492,6 +492,40 @@ pre code {
   "client_id_issued_at": 2893256800,
   "client_secret_expires_at": 2893276800
 }
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Unsuccessful client registration (in line with Section 3.2.2. of RFC 7591)</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>:</p><pre><code>{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Describes the client registration endpoint&#39;s OAuth error response",
+    "minItems": 1,
+    "properties": {
+        "error": {
+            "description": "Error Type",
+            "enum": [
+                "invalid_redirect_uri",
+                "invalid_client_metadata",
+                "invalid_software_statement",
+                "unapproved_software_statement"
+            ],
+            "type": "string"
+        },
+        "error_description": {
+            "description": "Human-readable ASCII text providing additional information",
+            "type": "string"
+        },
+        "error_uri": {
+            "description": "A URI identifying a human-readable web page with information about the error",
+            "format": "uri",
+            "type": "string"
+        }
+    },
+    "required": [
+        "error"
+    ],
+    "title": "Client Registration Error Response",
+    "type": "object"
+}
+</code></pre><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+    "error": "invalid_redirect_uri"
+}
 </code></pre></div></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="register_options"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_options">options</span> <span class="parent"></span>/register</h4></div><div class="modal-body"><div class="alert alert-info"><p>A pre-flight check generally used for Cross-Origin Resource Sharing (CORS) purposes</p></div><ul class="nav nav-tabs"><li class="active"><a href="#register_options_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="register_options_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="token" class="panel-title">Request Token Resource</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_token"><span class="parent"></span>/token</a> <span class="methods"><a href="#token_post"><span class="badge badge_post">post <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span></a> <a href="#token_options"><span class="badge badge_options">options</span></a></span></h4></div><div id="panel_token" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#token_post'" class="list-group-item"><span class="badge badge_post">post <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span><div class="method_description"><p>Method for requesting OAuth 2.0 Bearer Token (Authorization Code and Refresh Grants.)</p><p><strong>Note</strong> - The data flow is dependant on the chosen grant type (e.g. authorization_code, refresh grant, etc.)</p><p><strong>Note</strong> - Request examples may render as JSON objects, but should be passed in as the <code>application/x-www-form-urlencoded</code> MIME type, in accordance with <a href="https://tools.ietf.org/html/rfc6749">RFC6749</a>.</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#token_options'" class="list-group-item"><span class="badge badge_options">options</span><div class="method_description"><p>A pre-flight check generally used for Cross-Origin Resource Sharing (CORS) purposes</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="token_post"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span> <span class="parent"></span>/token</h4></div><div class="modal-body"><div class="alert alert-info"><p>Method for requesting OAuth 2.0 Bearer Token (Authorization Code and Refresh Grants.)</p><p><strong>Note</strong> - The data flow is dependant on the chosen grant type (e.g. authorization_code, refresh grant, etc.)</p><p><strong>Note</strong> - Request examples may render as JSON objects, but should be passed in as the <code>application/x-www-form-urlencoded</code> MIME type, in accordance with <a href="https://tools.ietf.org/html/rfc6749">RFC6749</a>.</p></div><div class="alert alert-warning"><span class="glyphicon glyphicon-lock" title="Authentication required"></span> Secured by <b>Basic Authentication</b><p>This API supports Basic Authentication using client ID and client secret as username and password credentials respectively.</p></div><ul class="nav nav-tabs"><li class="active"><a href="#token_post_request" data-toggle="tab">Request</a></li><li><a href="#token_post_response" data-toggle="tab">Response</a></li><li><a href="#token_post_securedby" data-toggle="tab">Security</a></li></ul><div class="tab-content"><div class="tab-pane active" id="token_post_request"><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em><span class="required">required</span>(string)</em><p>Colon-seperated, base-64 encoded string, of Client ID and Client Secret</p></li></ul><h3>Body</h3><p><strong>Media type</strong>: application/x-www-form-urlencoded</p><p><strong>Type</strong>: TokenAuthorizeRequest | TokenRefreshRequest</p><p><strong>Examples</strong>:</p><div class="examples"><p><strong>AuthCodeGrant</strong>:<br></p><pre><code>{
   "grant_type": "authorization_code",
   "code": "SplxlOBeZQQYbYS6WxSbIA",
@@ -623,11 +657,11 @@ pre code {
                 "type": "object"
             },
             "type": "array"
-        },
-        "required": [
-            "keys"
-        ]
+        }
     },
+    "required": [
+        "keys"
+    ],
     "title": "JWKs Response",
     "type": "object"
 }

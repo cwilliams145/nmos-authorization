@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Schema jwks_response.json
+title: Schema register_client_error_response.json
 ---
 
 <html>
 <meta charset="UTF-8">
-<h2>Schema jwks_response.json</h2>
+<h2>Schema register_client_error_response.json</h2>
 <p>
-    <a href="../../schemas/with-refs/jwks_response.html">Show original (referenced schemas with $ref)</a>
+    <a href="../../schemas/with-refs/register_client_error_response.html">Show original (referenced schemas with $ref)</a>
 </p>
 <div id="json-render">
 <script type="text/javascript" src="codemirror/lib/codemirror.js"></script>
@@ -30,54 +30,33 @@ title: Schema jwks_response.json
 <textarea id="mytextarea">
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "JSON Web Key Set to validate Access Token",
+    "description": "Describes the client registration endpoint's OAuth error response",
+    "minItems": 1,
     "properties": {
-        "keys": {
-            "description": "The value of the 'keys' parameter is an array of JWK values. By default, the order of the JWK values within the array does not imply an order of preference among them, although applications of JWK Sets can choose to assign a meaning to the order for their purposes, if desired.",
-            "items": {
-                "properties": {
-                    "alg": {
-                        "type": "string"
-                    },
-                    "key_ops": {
-                        "type": "string"
-                    },
-                    "kid": {
-                        "pattern": "^(x-nmos-[0-9]+)$",
-                        "type": "string"
-                    },
-                    "kty": {
-                        "type": "string"
-                    },
-                    "use": {
-                        "type": "string"
-                    },
-                    "x5c": {
-                        "type": "string"
-                    },
-                    "x5t": {
-                        "type": "string"
-                    },
-                    "x5t#S256": {
-                        "type": "string"
-                    },
-                    "x5u": {
-                        "format": "uri",
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "kty"
-                ],
-                "type": "object"
-            },
-            "type": "array"
+        "error": {
+            "description": "Error Type",
+            "enum": [
+                "invalid_redirect_uri",
+                "invalid_client_metadata",
+                "invalid_software_statement",
+                "unapproved_software_statement"
+            ],
+            "type": "string"
+        },
+        "error_description": {
+            "description": "Human-readable ASCII text providing additional information",
+            "type": "string"
+        },
+        "error_uri": {
+            "description": "A URI identifying a human-readable web page with information about the error",
+            "format": "uri",
+            "type": "string"
         }
     },
     "required": [
-        "keys"
+        "error"
     ],
-    "title": "JWKs Response",
+    "title": "Client Registration Error Response",
     "type": "object"
 }
 </textarea>
