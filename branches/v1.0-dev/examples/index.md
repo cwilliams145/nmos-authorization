@@ -4,6 +4,7 @@
 
 ## Examples for branch v1.0-dev
 
+- [access_token](access_token.html)
 - [auth-metadata-get-200](auth-metadata-get-200.html)
 - [auth-metadata-issuer-get-200](auth-metadata-issuer-get-200.html)
 - [base-get-200](base-get-200.html)

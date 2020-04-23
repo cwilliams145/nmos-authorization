@@ -33,7 +33,7 @@ title: Schema token_schema.json
     "description": "Claims contained within JSON Web Token",
     "properties": {
         "aud": {
-            "description": "The fully qualified domain name of the intended recipient (Resource Server), or a domain name containing wild-card characters",
+            "description": "A JSON array of case-sensitive strings, each containing a StringOrURI value that identifies the recipients that the JWT is intended for",
             "items": {
                 "type": "string"
             },
@@ -52,7 +52,7 @@ title: Schema token_schema.json
             "type": "number"
         },
         "iss": {
-            "description": "The DNS name of the Authorization Server issuing the token",
+            "description": "A case-sensitive string containing a StringOrURI value that identifies the Authorization Server that issued the JWT",
             "type": "string"
         },
         "scope": {
@@ -64,12 +64,20 @@ title: Schema token_schema.json
             "type": "string"
         },
         "x-nmos-api": {
+            "additionalProperties": false,
             "description": "An object containing the access permissions of the user for the listed NMOS APIs",
             "patternProperties": {
-                "[a-z_-]": {
+                "^[a-z_-]+$": {
                     "minProperties": 1,
-                    "patternProperties": {
-                        "^read$|^write$": {
+                    "properties": {
+                        "read": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "minItems": 1,
+                            "type": "array"
+                        },
+                        "write": {
                             "items": {
                                 "type": "string"
                             },

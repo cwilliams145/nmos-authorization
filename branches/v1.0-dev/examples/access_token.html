@@ -1,14 +1,11 @@
 ---
 layout: default
-title: Schema token_response.json
+title: Example access_token.json
 ---
 
 <html>
 <meta charset="UTF-8">
-<h2>Schema token_response.json</h2>
-<p>
-    <a href="../../schemas/resolved/token_response.html">Resolve referenced schemas (may reorder keys)</a>
-</p>
+<h2>Example access_token.json</h2>
 <div id="json-render">
 <script type="text/javascript" src="codemirror/lib/codemirror.js"></script>
 <link rel="stylesheet" href="codemirror/lib/codemirror.css">
@@ -29,33 +26,26 @@ title: Schema token_response.json
 
 <textarea id="mytextarea">
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Token Response",
-  "description": "OAuth2 Response for the request of a Bearer Token",
-  "type": "object",
-  "properties": {
-    "access_token": {
-      "description": "Access Token to be used in accessing protected endpoints",
-      "type": "string"
+  "iss": "auth.example.com",
+  "sub": "username@example.com",
+  "aud": ["*.example.com"],
+  "iat": 1548779460,
+  "exp": 1548783060,
+  "scope": "registration query connection",
+  "client_id": "hopy0dNRPNTiGJDqPfqYwGmw",
+  "x-nmos-api": {
+    "registration": {
+      "read": ["*"]
     },
-    "expires_in": {
-      "description": "The lifetime in seconds of the access token",
-      "type": "integer"
+    "query": {
+      "read": ["*"],
+      "write": ["subscriptions/*"]
     },
-    "refresh_token": {
-      "description": "Refresh Token to be used to obtain further Access Tokens",
-      "type": "string"
-    },
-    "scope": {
-      "description": "The scope of the Access Token",
-      "type": "string"
-    },
-    "token_type": {
-      "description": "The type of the Token issued",
-      "type": "string"
+    "connection": {
+      "read": ["*"],
+      "write": ["single/*"]
     }
-  },
-  "required": ["access_token", "expires_in", "token_type"]
+  }
 }
 </textarea>
 <script>

@@ -43,7 +43,6 @@ title: Schema jwks_response.json
                         "type": "string"
                     },
                     "kid": {
-                        "pattern": "^(x-nmos-[0-9]+)$",
                         "type": "string"
                     },
                     "kty": {
@@ -53,7 +52,10 @@ title: Schema jwks_response.json
                         "type": "string"
                     },
                     "x5c": {
-                        "type": "string"
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
                     },
                     "x5t": {
                         "type": "string"
