@@ -44,10 +44,17 @@ title: Schema token_schema.json
     },
     "aud": {
       "description": "A JSON array of case-sensitive strings, each containing a StringOrURI value that identifies the recipients that the JWT is intended for",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "oneOf": [
+        {
+          "type": "array",
+          "items": {
+          "type": "string"
+          }
+        },
+        {
+          "type": "string"
+        }
+      ]
     },
     "exp": {
       "description": "The UTC time at which the token expires",
@@ -64,36 +71,33 @@ title: Schema token_schema.json
     "scope": {
       "description": "A string containing a space-separated list of scopes associated with the token",
       "type": "string"
-    },
-    "x-nmos-api": {
-      "description": "An object containing the access permissions of the user for the listed NMOS APIs",
+    }
+  },
+  "patternProperties": {
+    "^x-nmos-[a-z]+$": {
+      "description": "An object containing the access permissions of the user for the NMOS API identified by this attribute's name",
       "type": "object",
       "additionalProperties": false,
-      "patternProperties": {
-        "^[a-z_-]+$": {
-          "type": "object",
-          "minProperties": 1,
-          "properties": {
-            "read": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1
-            },
-            "write": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1
-            }
-          }
+      "minProperties": 1,
+      "properties": {
+        "read": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "write": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
         }
       }
     }
   },
-  "required": ["iss", "sub", "aud", "exp", "client_id", "x-nmos-api"]
+  "required": ["iss", "sub", "aud", "exp"]
 }
 </textarea>
 <script>

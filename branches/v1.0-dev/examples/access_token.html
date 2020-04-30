@@ -33,18 +33,16 @@ title: Example access_token.json
   "exp": 1548783060,
   "scope": "registration query connection",
   "client_id": "hopy0dNRPNTiGJDqPfqYwGmw",
-  "x-nmos-api": {
-    "registration": {
-      "read": ["*"]
-    },
-    "query": {
-      "read": ["*"],
-      "write": ["subscriptions/*"]
-    },
-    "connection": {
-      "read": ["*"],
-      "write": ["single/*"]
-    }
+  "x-nmos-registration": {
+    "read": ["*"]
+  },
+  "x-nmos-query": {
+    "read": ["*"],
+    "write": ["subscriptions/*"]
+  },
+  "x-nmos-connection": {
+    "read": ["*"],
+    "write": ["single/*"]
   }
 }
 </textarea>
