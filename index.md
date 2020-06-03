@@ -14,7 +14,7 @@
 
 ### What does it do?
 
-- Allows an API server to accept or reject requests depending on what a client is authorised to do
+- Allows an API server to accept or reject requests depending on what a client is authorized to do
 
 ### Why does it matter?
 
