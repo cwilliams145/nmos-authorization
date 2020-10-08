@@ -33,12 +33,12 @@ title: Schema token_schema.json
     "description": "Claims contained within JSON Web Token",
     "patternProperties": {
         "^x-nmos-[a-z]+$": {
-            "additionalProperties": false,
             "description": "An object containing the access permissions of the user for the NMOS API identified by this attribute's name",
             "minProperties": 1,
             "properties": {
                 "read": {
                     "items": {
+                        "minLength": 1,
                         "type": "string"
                     },
                     "minItems": 1,
@@ -46,6 +46,7 @@ title: Schema token_schema.json
                 },
                 "write": {
                     "items": {
+                        "minLength": 1,
                         "type": "string"
                     },
                     "minItems": 1,
