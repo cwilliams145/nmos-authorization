@@ -5,7 +5,6 @@
 ## JSON Schemas for branch v1.0-dev
 
 - [auth_metadata](with-refs/auth_metadata.html) [(flattened)](resolved/auth_metadata.html)
-- [authorization-base](with-refs/authorization-base.html) [(flattened)](resolved/authorization-base.html)
 - [jwks_response](with-refs/jwks_response.html) [(flattened)](resolved/jwks_response.html)
 - [register_client_error_response](with-refs/register_client_error_response.html) [(flattened)](resolved/register_client_error_response.html)
 - [register_client_request](with-refs/register_client_request.html) [(flattened)](resolved/register_client_request.html)
