@@ -55,8 +55,64 @@ title: Schema register_client_request.json
             "type": "array"
         },
         "jwks": {
+            "allOf": [
+                {
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "JSON Web Key Set to validate JSON Web Token",
+                    "properties": {
+                        "keys": {
+                            "description": "The value of the 'keys' parameter is an array of JWK values. By default, the order of the JWK values within the array does not imply an order of preference among them, although applications of JWK Sets can choose to assign a meaning to the order for their purposes, if desired.",
+                            "items": {
+                                "properties": {
+                                    "alg": {
+                                        "type": "string"
+                                    },
+                                    "key_ops": {
+                                        "type": "string"
+                                    },
+                                    "kid": {
+                                        "type": "string"
+                                    },
+                                    "kty": {
+                                        "type": "string"
+                                    },
+                                    "use": {
+                                        "type": "string"
+                                    },
+                                    "x5c": {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "x5t": {
+                                        "type": "string"
+                                    },
+                                    "x5t#S256": {
+                                        "type": "string"
+                                    },
+                                    "x5u": {
+                                        "format": "uri",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "kty"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "required": [
+                        "keys"
+                    ],
+                    "title": "JSON Web Key Set",
+                    "type": "object"
+                }
+            ],
             "description": "Client's JSON Web Key Set document value, which contains the client's public keys",
-            "type": "string"
+            "type": "object"
         },
         "jwks_uri": {
             "description": "URL string referencing the client's JSON Web Key (JWK) Set document, which contains the client's public keys",
@@ -98,11 +154,6 @@ title: Schema register_client_request.json
         },
         "token_endpoint_auth_method": {
             "description": "String indicator of the requested authentication method for the token endpoint",
-            "enum": [
-                "client_secret_post",
-                "client_secret_basic",
-                "none"
-            ],
             "type": "string"
         },
         "tos_uri": {

@@ -43,8 +43,7 @@ title: Schema register_client_request.json
     },
     "token_endpoint_auth_method": {
       "description": "String indicator of the requested authentication method for the token endpoint",
-      "type": "string",
-      "enum": ["client_secret_post", "client_secret_basic", "none"]
+      "type": "string"
     },
     "grant_types": {
       "description": "Array of OAuth 2.0 grant type strings that the client can use at the token endpoint",
@@ -97,7 +96,10 @@ title: Schema register_client_request.json
     },
     "jwks": {
       "description": "Client's JSON Web Key Set document value, which contains the client's public keys",
-      "type": "string"
+      "type": "object",
+      "allOf": [
+        {"$ref": "jwks_schema.json"}
+      ]
     },
     "software_id": {
       "description": "A unique identifier string (e.g. a UUID) assigned by the client developer or software publisher",

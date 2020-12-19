@@ -6,6 +6,7 @@
 
 - [auth_metadata](with-refs/auth_metadata.html) [(flattened)](resolved/auth_metadata.html)
 - [jwks_response](with-refs/jwks_response.html) [(flattened)](resolved/jwks_response.html)
+- [jwks_schema](with-refs/jwks_schema.html) [(flattened)](resolved/jwks_schema.html)
 - [register_client_error_response](with-refs/register_client_error_response.html) [(flattened)](resolved/register_client_error_response.html)
 - [register_client_request](with-refs/register_client_request.html) [(flattened)](resolved/register_client_request.html)
 - [register_client_response](with-refs/register_client_response.html) [(flattened)](resolved/register_client_response.html)

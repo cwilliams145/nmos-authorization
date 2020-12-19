@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Schema token_response.json
+title: Schema jwks_schema.json
 ---
 
 <html>
 <meta charset="UTF-8">
-<h2>Schema token_response.json</h2>
+<h2>Schema jwks_schema.json</h2>
 <p>
-    <a href="../../schemas/with-refs/token_response.html">Show original (referenced schemas with $ref)</a>
+    <a href="../../schemas/with-refs/jwks_schema.html">Show original (referenced schemas with $ref)</a>
 </p>
 <div id="json-render">
 <script type="text/javascript" src="codemirror/lib/codemirror.js"></script>
@@ -30,35 +30,56 @@ title: Schema token_response.json
 <textarea id="mytextarea">
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "OAuth2 Response for the request of a Bearer Token",
+    "description": "JSON Web Key Set to validate JSON Web Token",
     "properties": {
-        "access_token": {
-            "description": "Access Token to be used in accessing protected endpoints",
-            "type": "string"
-        },
-        "expires_in": {
-            "description": "The lifetime in seconds of the Access Token",
-            "type": "integer"
-        },
-        "refresh_token": {
-            "description": "Refresh Token to be used to obtain further Access Tokens",
-            "type": "string"
-        },
-        "scope": {
-            "description": "The scope of the Access Token",
-            "type": "string"
-        },
-        "token_type": {
-            "description": "The type of the Token issued",
-            "type": "string"
+        "keys": {
+            "description": "The value of the 'keys' parameter is an array of JWK values. By default, the order of the JWK values within the array does not imply an order of preference among them, although applications of JWK Sets can choose to assign a meaning to the order for their purposes, if desired.",
+            "items": {
+                "properties": {
+                    "alg": {
+                        "type": "string"
+                    },
+                    "key_ops": {
+                        "type": "string"
+                    },
+                    "kid": {
+                        "type": "string"
+                    },
+                    "kty": {
+                        "type": "string"
+                    },
+                    "use": {
+                        "type": "string"
+                    },
+                    "x5c": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "x5t": {
+                        "type": "string"
+                    },
+                    "x5t#S256": {
+                        "type": "string"
+                    },
+                    "x5u": {
+                        "format": "uri",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "kty"
+                ],
+                "type": "object"
+            },
+            "type": "array"
         }
     },
     "required": [
-        "access_token",
-        "expires_in",
-        "token_type"
+        "keys"
     ],
-    "title": "Token Response",
+    "title": "JSON Web Key Set",
     "type": "object"
 }
 </textarea>

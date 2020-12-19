@@ -30,55 +30,63 @@ title: Schema jwks_response.json
 <textarea id="mytextarea">
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "JSON Web Key Set to validate Access Token",
-    "properties": {
-        "keys": {
-            "description": "The value of the 'keys' parameter is an array of JWK values. By default, the order of the JWK values within the array does not imply an order of preference among them, although applications of JWK Sets can choose to assign a meaning to the order for their purposes, if desired.",
-            "items": {
-                "properties": {
-                    "alg": {
-                        "type": "string"
-                    },
-                    "key_ops": {
-                        "type": "string"
-                    },
-                    "kid": {
-                        "type": "string"
-                    },
-                    "kty": {
-                        "type": "string"
-                    },
-                    "use": {
-                        "type": "string"
-                    },
-                    "x5c": {
-                        "items": {
-                            "type": "string"
+    "allOf": [
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "description": "JSON Web Key Set to validate JSON Web Token",
+            "properties": {
+                "keys": {
+                    "description": "The value of the 'keys' parameter is an array of JWK values. By default, the order of the JWK values within the array does not imply an order of preference among them, although applications of JWK Sets can choose to assign a meaning to the order for their purposes, if desired.",
+                    "items": {
+                        "properties": {
+                            "alg": {
+                                "type": "string"
+                            },
+                            "key_ops": {
+                                "type": "string"
+                            },
+                            "kid": {
+                                "type": "string"
+                            },
+                            "kty": {
+                                "type": "string"
+                            },
+                            "use": {
+                                "type": "string"
+                            },
+                            "x5c": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "x5t": {
+                                "type": "string"
+                            },
+                            "x5t#S256": {
+                                "type": "string"
+                            },
+                            "x5u": {
+                                "format": "uri",
+                                "type": "string"
+                            }
                         },
-                        "type": "array"
+                        "required": [
+                            "kty"
+                        ],
+                        "type": "object"
                     },
-                    "x5t": {
-                        "type": "string"
-                    },
-                    "x5t#S256": {
-                        "type": "string"
-                    },
-                    "x5u": {
-                        "format": "uri",
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "kty"
-                ],
-                "type": "object"
+                    "type": "array"
+                }
             },
-            "type": "array"
+            "required": [
+                "keys"
+            ],
+            "title": "JSON Web Key Set",
+            "type": "object"
         }
-    },
-    "required": [
-        "keys"
     ],
+    "description": "JSON Web Key Set to validate Access Token",
     "title": "JWKs Response",
     "type": "object"
 }
