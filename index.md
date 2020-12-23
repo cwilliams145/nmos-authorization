@@ -4,7 +4,7 @@
 
 | Repository | Default Branch | Lint (default) | Render (all) |
 | --- | --- | --- | --- |
-| [nmos-authorization](https://github.com/AMWA-TV/nmos-authorization) | v1.0-dev | <a href="https://github.com/AMWA-TV/nmos-authorization/actions?query=workflow%3ALint"><img src="https://github.com/AMWA-TV/nmos-authorization/workflows/Lint/badge.svg" width="100"/></a> | <a href="https://github.com/AMWA-TV/nmos-authorization/actions?query=workflow%3ARender"><img src="https://github.com/AMWA-TV/nmos-authorization/workflows/Render/badge.svg" width="100"/></a> |
+| [nmos-authorization](https://github.com/AMWA-TV/nmos-authorization) | v1.0-dev | [![Lint Status](https://github.com/AMWA-TV/nmos-authorization/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/nmos-authorization/actions?query=workflow%3ALint) | [![Render Status](https://github.com/AMWA-TV/nmos-authorization/workflows/Render/badge.svg)](https://github.com/AMWA-TV/nmos-authorization/actions?query=workflow%3ARender) |
 
 
 ---
